@@ -6,8 +6,13 @@ Author: Who wrote it
 Maintainer: The package maintainer <yourself@somewhere.net>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
+Imports:
+  versionsort
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/etiennebacher/getnews
 BugReports: https://github.com/etiennebacher/getnews/issues
+Depends: 
+    R (>= 2.10)
+RoxygenNote: 7.2.0

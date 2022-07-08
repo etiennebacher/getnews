@@ -21,7 +21,7 @@ getnews <- function(fn, pkg = NULL, recent_first = TRUE) {
 
     ## Need to put this dataset in an external dataset to avoid loading time
     ## This only get news for 4.0.0, see the doc for 3.0 and 2.0
-    db <- as.data.frame(news())
+    db <- Rnews
     cats <- unique(db$Category)
     cats <- cats[grepl("new", cats, ignore.case = TRUE)]
     txt <- db[db$Category %in% cats, c("Version", "Text")]
@@ -50,6 +50,13 @@ getnews <- function(fn, pkg = NULL, recent_first = TRUE) {
     txt <- txt[grepl(fn, txt$Text), ]
 
     txt_split <- split(txt, txt$Version)
+    txt_split <- lapply(txt_split, function(x) {
+      to_keep <- strsplit(x$Text, " - ")[[1]]
+      to_keep <- to_keep[grepl(fn, to_keep)]
+      x$Text <- paste0(to_keep, collapse = "")
+      unique(x)
+    })
+
     order_to_use <- if (recent_first) {
       versionsort::ver_sort(names(txt_split))
     } else {
@@ -67,3 +74,5 @@ getnews <- function(fn, pkg = NULL, recent_first = TRUE) {
   }
 
 }
+
+
