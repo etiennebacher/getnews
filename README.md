@@ -6,13 +6,13 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of getnews is to obtain all the NEWS items that concern a
+The goal of `{getnews}` is to obtain all the NEWS items that concern a
 particular function. This can be used to know when a particular function
 was introduced in a package.
 
 ## Installation
 
-You can install the development version of getnews from
+You can install the development version of `{getnews}` from
 [GitHub](https://github.com/) with:
 
 ``` r
