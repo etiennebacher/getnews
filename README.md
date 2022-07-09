@@ -8,7 +8,10 @@
 
 The goal of `{getnews}` is to obtain all the NEWS items that concern a
 particular function. This can be used to know when a particular function
-was introduced in a package.
+was introduced in a package, but also when the behavior of a function
+changed, when it gained or lost arguments, etc. This should be
+particularly helpful to package developers who want to check if
+introducing a particular function will break backwards compatibility.
 
 ## Installation
 
