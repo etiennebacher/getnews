@@ -1,0 +1,44 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# getnews
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of getnews is to obtain all the NEWS items that concern a particular function. This can be used to know when a particular function was introduced in a package.
+
+## Installation
+
+You can install the development version of getnews from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("etiennebacher/getnews")
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(getnews)
+
+getnews("paste0")
+
+getnews("relocate", "dplyr")
+
+getnews("testServer", "shiny", recent_first = FALSE)
+```

@@ -45,7 +45,7 @@ getnews <- function(fn, pkg = NULL, recent_first = TRUE) {
 
   } else {
 
-    db <- as.data.frame(news(package = pkg))
+    db <- as.data.frame(utils::news(package = pkg))
     txt <- db[, c("Version", "Text")]
     txt <- txt[grepl(fn, txt$Text), ]
 
@@ -66,8 +66,8 @@ getnews <- function(fn, pkg = NULL, recent_first = TRUE) {
     for (i in order_to_use) {
       cat(
         "VERSION", unique(txt_split[[i]]$Version), "\n",
-        "===========", "\n\n",
-        paste(txt_split[[i]]$Text, collapse = "\n"), "\n\n\n"
+        "===========", "\n",
+        paste(txt_split[[i]]$Text, collapse = "\n"), "\n\n"
       )
     }
 
