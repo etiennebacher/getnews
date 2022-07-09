@@ -22,8 +22,6 @@ devtools::install_github("etiennebacher/getnews")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
-
 ``` r
 library(getnews)
 
@@ -50,16 +48,13 @@ getnews("paste0")
 getnews("relocate", "dplyr")
 #> VERSION 1.0.0 
 #>  =========== 
-#> 
 #>  New relocate() verb makes it easy to move columns around within a
 #>     data frame (#4598).
 #> 
 #>   
 #> 
-#> 
 #> VERSION 1.0.3 
 #>  =========== 
-#> 
 #>  relocate() can rename columns it relocates (#5569).
 #> 
 #> 
@@ -67,15 +62,12 @@ getnews("relocate", "dplyr")
 getnews("testServer", "shiny", recent_first = FALSE)
 #> VERSION 1.6.0 
 #>  =========== 
-#> 
 #>  testServer() can accept a single server function as input (#2965).
 #> 
 #>   
 #> 
-#> 
 #> VERSION 1.5.0 
 #>  =========== 
-#> 
 #>  testServer() is a new function for testing reactive behavior inside
 #>     server functions and modules. (#2682, #2764, #2807)
 #> 
