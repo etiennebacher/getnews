@@ -17,14 +17,14 @@
 
 getnews <- function(fn, pkg = NULL, recent_first = TRUE) {
 
+  fn <- gsub("\\.", "\\\\.", fn)
+
   if (is.null(pkg)) {
 
     ## Need to put this dataset in an external dataset to avoid loading time
     ## This only get news for 4.0.0, see the doc for 3.0 and 2.0
     db <- Rnews
-    cats <- unique(db$Category)
-    cats <- cats[grepl("new", cats, ignore.case = TRUE)]
-    txt <- db[db$Category %in% cats, c("Version", "Text")]
+    txt <- db[, c("Version", "Text")]
     txt <- txt[grepl(fn, txt$Text), ]
     if (recent_first) {
       txt <- txt[match(versionsort::ver_sort(txt$Version), txt$Version), ]
